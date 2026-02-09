@@ -125,6 +125,10 @@ class LiteLLMProvider(LLMProvider):
         # kimi-k2.5 only supports temperature=1.0
         if "kimi-k2.5" in model.lower():
             temperature = 1.0
+        
+        # gpt-5 models only support temperature=1.0
+        if "gpt-5" in model.lower():
+            temperature = 1.0
 
         kwargs: dict[str, Any] = {
             "model": model,
